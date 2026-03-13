@@ -1,0 +1,42 @@
+{
+  "Abstraction": [
+    "Abstraction_Doctrine",
+    "Abstraction_Fund",
+    "Abstraction_Infrastructure",
+    "Abstraction_Misc",
+    "Abstraction_Program",
+    "Abstraction_Session",
+    "Abstraction_Specification",
+    "Abstraction_System"
+  ],
+  "Act": [
+    "Act_Amendment",
+    "Act_PublicAct"
+  ],
+  "Class": [
+    "Class_Non-ProtectedClass",
+    "Class_ProtectedClass"
+  ],
+  "Document": [
+    "Document_Bill",
+    "Document_Code",
+    "Document_Parenthetical",
+    "Document_Reference",
+    "Document_Report"
+  ],
+  "Organization": [
+    "Organization_Agency",
+    "Organization_Association",
+    "Organization_Committee",
+    "Organization_InternationalInstitution",
+    "Organization_LegislativeBody",
+    "Organization_Locality",
+    "Organization_Nation",
+    "Organization_State"
+  ],
+  "Person": [
+    "Person_Member",
+    "Person_Name",
+    "Person_Title"
+  ]
+}

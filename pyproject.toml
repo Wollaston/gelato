@@ -1,0 +1,53 @@
+[project]
+name = "gelato"
+version = "0.1.0"
+description = "The GELATO Dataset for Legislative NER"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  # Workspace Dependencies
+  "fine-tuning",
+  "ner",
+  "prompt-tuning",
+  "clients",
+  "data",
+  "scoring",
+  # PyPi Dependencies
+  "datasets>=2.14.4",
+  "dspy>=3.0.3",
+  "evaluate>=0.4.6",
+  "numpy>=2.2.6",
+  "pip>=25.2",
+  "pyarrow>=14.0.0",
+  "seqeval>=1.2.2",
+  "seqscore",
+  "spacy>=3.8.7",
+  "torch>=2.7.1",
+  "transformers>4.57.0",
+  "wandb>=0.22.2",
+  "loguru>=0.7.3",
+  "typer>=0.19.2",
+  "accelerate>=1.10.1",
+  "seaborn>=0.13.2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.4.2"]
+
+[tool.uv.sources]
+fine-tuning = { workspace = true }
+ner = { workspace = true }
+prompt-tuning = { workspace = true }
+clients = { workspace = true }
+data = { workspace = true }
+scoring = { workspace = true }
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[project.scripts]
+gelato = "gelato:cli"
+
+[build-system]
+requires = ["uv_build>=0.8.23,<0.9.0"]
+build-backend = "uv_build"
