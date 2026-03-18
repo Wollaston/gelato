@@ -3,6 +3,12 @@
 This repository contains the code, data, and scores for The Gelato Dataset 
 for Legislative NER (LREC 2026).
 
+## Original Paper
+
+The preprint of the original paper is available on arXiv:
+
+[The GELATO Dataset for Legislative NER](https://arxiv.org/abs/2603.14130)
+
 ## CLI
 
 The core of the project is a CLI to make it easy to run experiments on the GELATO dataset.
@@ -312,3 +318,19 @@ The final DSPy optimizers can be found in the `optimizers/` folder.
 ## Scores
 
 The CoNLL-formatted files for our reported scores can be found in the `scores/` folder.
+
+## Citing GELATO
+
+If you use our work in your research, please give us a cite:
+
+```
+@misc{flynn2026gelatodatasetlegislativener,
+      title={The GELATO Dataset for Legislative NER}, 
+      author={Matthew Flynn and Timothy Obiso and Sam Newman},
+      year={2026},
+      eprint={2603.14130},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2603.14130}, 
+}
+```
