@@ -311,6 +311,10 @@ We released our `gelato` checkpoints on HuggingFace:
 All `gelato` data, including level one and two splits, as well as original annotation data,
 can be found in the `data/` folder.
 
+We have also uploaded our data to [HuggingFace](https://huggingface.co/datasets/Wollaston/gelato).
+The level one and level two datasets are organized as subsets on HuggingFace,
+and each subset has its train, dev, and test splits.
+
 ## Optimizers
 
 The final DSPy optimizers can be found in the `optimizers/` folder.
