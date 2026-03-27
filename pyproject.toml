@@ -13,15 +13,14 @@ dependencies = [
   "data",
   "scoring",
   # PyPi Dependencies
-  "datasets>=2.14.4",
+  "datasets>=4.0.0",
   "dspy>=3.0.3",
   "evaluate>=0.4.6",
   "numpy>=2.2.6",
   "pip>=25.2",
   "pyarrow>=14.0.0",
   "seqeval>=1.2.2",
-  "seqscore",
-  "spacy>=3.8.7",
+  "seqscore>=0.6.0",
   "torch>=2.7.1",
   "transformers>4.57.0",
   "wandb>=0.22.2",
@@ -49,5 +48,5 @@ members = ["packages/*"]
 gelato = "gelato:cli"
 
 [build-system]
-requires = ["uv_build>=0.8.23,<0.9.0"]
+requires = ["uv_build>=0.11.0,<0.12.0"]
 build-backend = "uv_build"
