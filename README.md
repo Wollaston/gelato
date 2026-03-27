@@ -9,6 +9,22 @@ The preprint of the original paper is available on arXiv:
 
 [The GELATO Dataset for Legislative NER](https://arxiv.org/abs/2603.14130)
 
+## Installation
+
+`GELATO` is available as a standalone tool on PyPI. We recommend installing it with `uv`:
+
+```shell
+uv tool install gelato-ner
+```
+
+It can also be installed with pip:
+
+```shell
+pip install gelato-ner
+```
+
+The CLI tool will be available as `gelato`.
+
 ## CLI
 
 The core of the project is a CLI to make it easy to run experiments on the GELATO dataset.
