@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import typer
-from prompt_tuning import LEVEL_ONE, MODULE, OPTIMIZER
+from .prompt_tuning import LEVEL_ONE, MODULE, OPTIMIZER
 from typing_extensions import Annotated
 
 app = typer.Typer()
@@ -57,7 +57,7 @@ def prompt_optimize(
         ),
     ] = 10,
 ):
-    from prompt_tuning import optimize
+    from .prompt_tuning import optimize
 
     optimize(
         train_path=train_path,
@@ -119,7 +119,7 @@ def predict(
         ),
     ] = "LOCAL",
 ):
-    from prompt_tuning import predict
+    from .prompt_tuning import predict
 
     predict(
         abstraction_path=abstraction_path,
@@ -163,7 +163,7 @@ def fine_tune(
         typer.Option(min=1, max=64, help="Number of wandb sweeps to perform"),
     ] = 1,
 ):
-    from fine_tuning import FineTune
+    from .fine_tuning import FineTune
 
     fine_tuner = FineTune(
         train_path=train_path,
@@ -207,7 +207,7 @@ def train_model(
     ],
     output_dir: Annotated[str, typer.Option(help="output directory for wandb logs")],
 ):
-    from fine_tuning import ModelTrainer
+    from .fine_tuning import ModelTrainer
 
     ModelTrainer(
         model=model_id,
@@ -235,7 +235,7 @@ def score(
         ),
     ],
 ):
-    from scoring import score as score_ner
+    from .scoring import score as score_ner
 
     score_ner(dataset_path=dataset_path, model_id=model)
 
@@ -255,7 +255,7 @@ def align(
         ),
     ],
 ):
-    from scoring import align as align_predictions
+    from .scoring import align as align_predictions
 
     with open(predictions_path, "r") as file:
         predictions = file.read()
@@ -284,7 +284,7 @@ def confusion(
         typer.Argument(help="Path to save generated confusion matrix"),
     ],
 ):
-    from fine_tuning import confusion as confusion_matrices
+    from .fine_tuning import confusion as confusion_matrices
 
     confusion_matrices(predictions, references, output_path)
 

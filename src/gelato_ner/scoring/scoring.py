@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from data import Dataset
+from gelato_ner.data import Dataset
 from transformers import (
     AutoModelForTokenClassification,
     AutoTokenizer,

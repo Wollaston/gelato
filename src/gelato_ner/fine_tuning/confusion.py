@@ -1,11 +1,8 @@
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib.colors import LogNorm
-from scipy.special import xlog1py
 import seaborn as sns
-from sklearn.metrics import ConfusionMatrixDisplay, confusion_matrix
+from sklearn.metrics import confusion_matrix
 
 LABELS = [
     "O",

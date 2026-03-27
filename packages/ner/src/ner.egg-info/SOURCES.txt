@@ -1,8 +1,0 @@
-README.md
-pyproject.toml
-src/ner/__init__.py
-src/ner/main.py
-src/ner.egg-info/PKG-INFO
-src/ner.egg-info/SOURCES.txt
-src/ner.egg-info/dependency_links.txt
-src/ner.egg-info/top_level.txt

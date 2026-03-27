@@ -1,18 +1,19 @@
 [project]
-name = "gelato"
-version = "0.1.0"
-description = "The GELATO Dataset for Legislative NER"
+name = "gelato-ner"
+version = "1.0.0"
+description = "CLI for the GELATO Dataset for Legislative NER"
 readme = "README.md"
+license = {text = "MIT"}
+authors = [
+  {name = "Matthew Flynn", email = "matt@wollaston.dev"}
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
 requires-python = ">=3.12"
 dependencies = [
-  # Workspace Dependencies
-  "fine-tuning",
-  "ner",
-  "prompt-tuning",
-  "clients",
-  "data",
-  "scoring",
-  # PyPi Dependencies
   "datasets>=4.0.0",
   "dspy>=3.0.3",
   "evaluate>=0.4.6",
@@ -33,19 +34,8 @@ dependencies = [
 [dependency-groups]
 dev = ["pytest>=8.4.2"]
 
-[tool.uv.sources]
-fine-tuning = { workspace = true }
-ner = { workspace = true }
-prompt-tuning = { workspace = true }
-clients = { workspace = true }
-data = { workspace = true }
-scoring = { workspace = true }
-
-[tool.uv.workspace]
-members = ["packages/*"]
-
 [project.scripts]
-gelato = "gelato:cli"
+gelato = "gelato_ner:cli"
 
 [build-system]
 requires = ["uv_build>=0.11.0,<0.12.0"]

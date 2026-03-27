@@ -10,17 +10,6 @@ resolution-markers = [
     "python_full_version < '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
 ]
 
-[manifest]
-members = [
-    "clients",
-    "data",
-    "fine-tuning",
-    "gelato",
-    "ner",
-    "prompt-tuning",
-    "scoring",
-]
-
 [[package]]
 name = "accelerate"
 version = "1.13.0"
@@ -316,33 +305,6 @@ wheels = [
 ]
 
 [[package]]
-name = "clients"
-version = "0.1.0"
-source = { editable = "packages/clients" }
-dependencies = [
-    { name = "loguru" },
-    { name = "numpy" },
-    { name = "openai" },
-    { name = "pydantic" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pytest" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "loguru", specifier = ">=0.7.3" },
-    { name = "numpy", specifier = ">=2.3.3" },
-    { name = "openai", specifier = ">=2.1.0" },
-    { name = "pydantic", specifier = ">=2.11.10" },
-]
-
-[package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=8.4.0" }]
-
-[[package]]
 name = "cloudpickle"
 version = "3.1.2"
 source = { registry = "https://pypi.org/simple" }
@@ -517,25 +479,6 @@ wheels = [
 ]
 
 [[package]]
-name = "data"
-version = "0.1.0"
-source = { editable = "packages/data" }
-dependencies = [
-    { name = "seqscore" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pytest" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "seqscore", git = "https://github.com/Wollaston/seqscore-dev-pydantic.git" }]
-
-[package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=8.4.0" }]
-
-[[package]]
 name = "datasets"
 version = "4.8.4"
 source = { registry = "https://pypi.org/simple" }
@@ -689,33 +632,6 @@ wheels = [
 ]
 
 [[package]]
-name = "fine-tuning"
-version = "0.1.0"
-source = { editable = "packages/fine-tuning" }
-dependencies = [
-    { name = "datasets" },
-    { name = "evaluate" },
-    { name = "matplotlib" },
-    { name = "numpy" },
-    { name = "pydantic" },
-    { name = "scikit-learn" },
-    { name = "seqscore" },
-    { name = "transformers" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "datasets", specifier = ">=4.1.1" },
-    { name = "evaluate", specifier = ">=0.4.6" },
-    { name = "matplotlib", specifier = ">=3.10.6" },
-    { name = "numpy", specifier = ">=2.2.6" },
-    { name = "pydantic", specifier = ">=2.11.10" },
-    { name = "scikit-learn", specifier = ">=1.7.2" },
-    { name = "seqscore", git = "https://github.com/Wollaston/seqscore-dev-pydantic.git" },
-    { name = "transformers", specifier = ">=4.57.0" },
-]
-
-[[package]]
 name = "fonttools"
 version = "4.62.1"
 source = { registry = "https://pypi.org/simple" }
@@ -860,24 +776,18 @@ http = [
 ]
 
 [[package]]
-name = "gelato"
+name = "gelato-ner"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "accelerate" },
-    { name = "clients" },
-    { name = "data" },
     { name = "datasets" },
     { name = "dspy" },
     { name = "evaluate" },
-    { name = "fine-tuning" },
     { name = "loguru" },
-    { name = "ner" },
     { name = "numpy" },
     { name = "pip" },
-    { name = "prompt-tuning" },
     { name = "pyarrow" },
-    { name = "scoring" },
     { name = "seaborn" },
     { name = "seqeval" },
     { name = "seqscore" },
@@ -895,19 +805,13 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "accelerate", specifier = ">=1.10.1" },
-    { name = "clients", editable = "packages/clients" },
-    { name = "data", editable = "packages/data" },
     { name = "datasets", specifier = ">=4.0.0" },
     { name = "dspy", specifier = ">=3.0.3" },
     { name = "evaluate", specifier = ">=0.4.6" },
-    { name = "fine-tuning", editable = "packages/fine-tuning" },
     { name = "loguru", specifier = ">=0.7.3" },
-    { name = "ner", editable = "packages/ner" },
     { name = "numpy", specifier = ">=2.2.6" },
     { name = "pip", specifier = ">=25.2" },
-    { name = "prompt-tuning", editable = "packages/prompt-tuning" },
     { name = "pyarrow", specifier = ">=14.0.0" },
-    { name = "scoring", editable = "packages/scoring" },
     { name = "seaborn", specifier = ">=0.13.2" },
     { name = "seqeval", specifier = ">=1.2.2" },
     { name = "seqscore", specifier = ">=0.6.0" },
@@ -1634,11 +1538,6 @@ wheels = [
 ]
 
 [[package]]
-name = "ner"
-version = "0.1.0"
-source = { editable = "packages/ner" }
-
-[[package]]
 name = "networkx"
 version = "3.6.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2103,35 +2002,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe
 wheels = [
     { url = "https://files.pythonhosted.org/packages/54/20/4d324d65cc6d9205fabedc306948156824eb9f0ee1633355a8f7ec5c66bf/pluggy-1.6.0-py3-none-any.whl", hash = "sha256:e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746", size = 20538, upload-time = "2025-05-15T12:30:06.134Z" },
 ]
-
-[[package]]
-name = "prompt-tuning"
-version = "0.1.0"
-source = { editable = "packages/prompt-tuning" }
-dependencies = [
-    { name = "dspy" },
-    { name = "loguru" },
-    { name = "pydantic" },
-    { name = "sentence-transformers" },
-    { name = "seqscore" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pytest" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "dspy", specifier = ">=3.0.3" },
-    { name = "loguru", specifier = ">=0.7.3" },
-    { name = "pydantic", specifier = ">=2.11.10" },
-    { name = "sentence-transformers", specifier = ">=5.1.1" },
-    { name = "seqscore", git = "https://github.com/Wollaston/seqscore-dev-pydantic" },
-]
-
-[package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=8.4.2" }]
 
 [[package]]
 name = "propcache"
@@ -2829,21 +2699,6 @@ wheels = [
 ]
 
 [[package]]
-name = "scoring"
-version = "0.1.0"
-source = { editable = "packages/scoring" }
-
-[package.dev-dependencies]
-dev = [
-    { name = "pytest" },
-]
-
-[package.metadata]
-
-[package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=8.4.2" }]
-
-[[package]]
 name = "seaborn"
 version = "0.13.2"
 source = { registry = "https://pypi.org/simple" }
@@ -2855,25 +2710,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/86/59/a451d7420a77ab0b98f7affa3a1d78a313d2f7281a57afb1a34bae8ab412/seaborn-0.13.2.tar.gz", hash = "sha256:93e60a40988f4d65e9f4885df477e2fdaff6b73a9ded434c1ab356dd57eefff7", size = 1457696, upload-time = "2024-01-25T13:21:52.551Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/83/11/00d3c3dfc25ad54e731d91449895a79e4bf2384dc3ac01809010ba88f6d5/seaborn-0.13.2-py3-none-any.whl", hash = "sha256:636f8336facf092165e27924f223d3c62ca560b1f2bb5dff7ab7fad265361987", size = 294914, upload-time = "2024-01-25T13:21:49.598Z" },
-]
-
-[[package]]
-name = "sentence-transformers"
-version = "5.3.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "huggingface-hub" },
-    { name = "numpy" },
-    { name = "scikit-learn" },
-    { name = "scipy" },
-    { name = "torch" },
-    { name = "tqdm" },
-    { name = "transformers" },
-    { name = "typing-extensions" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/fe/26/448453925b6ce0c29d8b54327caa71ee4835511aef02070467402273079c/sentence_transformers-5.3.0.tar.gz", hash = "sha256:414a0a881f53a4df0e6cbace75f823bfcb6b94d674c42a384b498959b7c065e2", size = 403330, upload-time = "2026-03-12T14:53:40.778Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/e2/9c/2fa7224058cad8df68d84bafee21716f30892cecc7ad1ad73bde61d23754/sentence_transformers-5.3.0-py3-none-any.whl", hash = "sha256:dca6b98db790274a68185d27a65801b58b4caf653a4e556b5f62827509347c7d", size = 512390, upload-time = "2026-03-12T14:53:39.035Z" },
 ]
 
 [[package]]
@@ -2901,12 +2737,16 @@ sdist = { url = "https://files.pythonhosted.org/packages/9d/2d/233c79d5b4e5ab1db
 
 [[package]]
 name = "seqscore"
-version = "0.6.0"
-source = { git = "https://github.com/Wollaston/seqscore-dev-pydantic#f96ae09e521837252c05670bb545ede62c33e4ee" }
+version = "0.7.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
     { name = "click" },
     { name = "tabulate" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e5/5d/15b72afc1754aaa22b68d3096f13de30e9eaa8f7f1640a4bd56d7deabf67/seqscore-0.7.0.tar.gz", hash = "sha256:0bd244cde716030022a005b782e05fee1ee01aeacefa94da2b3b0c3a5c9332e3", size = 45946, upload-time = "2025-12-13T17:28:48.929Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a0/eb/a12e5ce735c07d435b7156e4a3d57853098be683b07c6f4120300b45e92b/seqscore-0.7.0-py3-none-any.whl", hash = "sha256:77c21d93511faafef853abb065f8f90cd6690682ff9795272e3228998ba042d8", size = 31627, upload-time = "2025-12-13T17:28:48.087Z" },
 ]
 
 [[package]]
